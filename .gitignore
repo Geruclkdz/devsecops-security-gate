@@ -1,0 +1,17 @@
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Maven build output
+target/
+**/target/
+
+# Skompilowane klasy
+*.class
+
+# Logi
+*.log
+
+# System operacyjny
+.DS_Store
+Thumbs.db
