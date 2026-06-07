@@ -47,15 +47,14 @@ jobs:
       - name: Checkout kodu
         uses: actions/checkout@v4
 
+      - name: Instalacja Semgrep
+        run: pip install semgrep --break-system-packages -q
+
       - name: Uruchom Semgrep — reguły Java security
-        uses: semgrep/semgrep-action@v1
-        with:
-          config: >
-            p/java
-            p/owasp-top-ten
-          output-format: json
-          output-file: semgrep-results.json
-        continue-on-error: true  # Nie przerywaj — wyniki oceni Risk Scorer
+        run: |
+          semgrep --config p/java --config p/owasp-top-ten \
+            --json --output semgrep-results.json \
+            demo-app/ || true
 
       - name: Upload raportu Semgrep
         uses: actions/upload-artifact@v4
