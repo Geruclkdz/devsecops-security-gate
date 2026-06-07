@@ -7,7 +7,7 @@ on:
     branches: [ main, master ]
 
 env:
-  RISK_THRESHOLD: 70       # Próg blokady
+  RISK_THRESHOLD: 20       # Próg blokady
   SCORER_PORT: 8081        # Port Risk Scorera w pipeline
 
 jobs:
