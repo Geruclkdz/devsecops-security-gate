@@ -1,6 +1,7 @@
 name: Deploy Risk Scorer to Azure
 
 on:
+  workflow_dispatch:  # ręczne uruchomienie z GitHub Actions UI
   push:
     branches: [ main, master ]
     paths:
